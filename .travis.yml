@@ -16,4 +16,4 @@ script:
 after_success:
   - pip install awscli --upgrade --user
   - chmod a+x deploy.sh
-- ./deploy.sh
+  - ./deploy.sh
