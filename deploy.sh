@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ARTIFACT="upload.zip"
-VERSION=$1
+VERSION=$( date +"%Y%m%d%H%M" )
 
 echo "Building JS"
 yarn build
