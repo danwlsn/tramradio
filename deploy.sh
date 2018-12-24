@@ -14,7 +14,6 @@ cd ../
 
 echo "Uploading build"
 aws s3 cp ${ARTIFACT} s3://elasticbeanstalk-eu-west-1-847878515230/versions/tramradio/${VERSION}.zip
-sleep 2
 
 echo "Creating new application version: ${VERSION}"
 aws elasticbeanstalk create-application-version \
