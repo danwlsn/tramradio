@@ -1,12 +1,12 @@
 import os
 from flask import Flask, send_from_directory
 
-app = Flask(__name__, static_folder='react_app/build')
+application = Flask(__name__, static_folder='build/static')
 
 
-# Serve React App
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
+# Serve React Application
+@application.route('/', defaults={'path': ''})
+@application.route('/<path:path>')
 def serve(path):
     if path != '' and os.path.exists('./build/' + path):
         return send_from_directory('./build', path)
@@ -15,4 +15,5 @@ def serve(path):
 
 
 if __name__ == '__main__':
-    app.run(use_reloader=True, port=5000, threaded=True)
+    application.debug = True
+    application.run(use_reloader=True, port=5000, threaded=True)
